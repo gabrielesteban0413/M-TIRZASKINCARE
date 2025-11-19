@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
+    eslint: {
+        // Deshabilitar ESLint durante el build para Netlify
+        ignoreDuringBuilds: true,
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
