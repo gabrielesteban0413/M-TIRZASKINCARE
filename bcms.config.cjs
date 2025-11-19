@@ -1,13 +1,10 @@
-/**
- * @type {import('@thebcms/cli/config').BCMSConfig}
- */
+// bcms.config.js (o el nombre de tu archivo de configuración de BCMS)
 module.exports = {
-    client: {
-        orgId: process.env.BCMS_ORG_ID,
-        instanceId: process.env.BCMS_INSTANCE_ID,
-        apiKey: {
-            id: process.env.BCMS_API_KEY_ID,
-            secret: process.env.BCMS_API_KEY_SECRET,
-        },
+  cms: {
+    origin: process.env.BCMS_CMS_ORIGIN || 'https://cloud-api.thebcms.com',
+    key: {
+      id: process.env.BCMS_API_KEY_ID,
+      secret: process.env.BCMS_API_KEY_SECRET,
     },
+  },
 };
