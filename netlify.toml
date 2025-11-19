@@ -1,9 +1,11 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NODE_VERSION = "20"
+  # Omitir las variables públicas de BCMS del escaneo de secretos
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_BCMS_ORG_ID,NEXT_PUBLIC_BCMS_INSTANCE_ID,NEXT_PUBLIC_BCMS_API_KEY_ID,NEXT_PUBLIC_BCMS_API_KEY_SECRET"
